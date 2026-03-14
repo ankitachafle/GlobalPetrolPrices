@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Petrol Prices - Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container auth-wrapper">
+        <h1 class="logo-text">Aether<span class="neon-text">Predict</span></h1>
+        <p class="subtitle">Predict global petrol prices with AI accuracy.</p>
+        
+        <div class="auth-box">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchAuth('login')">Login</button>
+                <button class="tab-btn" onclick="switchAuth('signup')">Sign Up</button>
+            </div>
+            
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <!-- Signup specific field -->
+                <div class="input-group signup-field" style="display: none;">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password">
+                </div>
+                
+                <button type="submit" class="btn-primary" id="auth-submit-btn">Login to Continue</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

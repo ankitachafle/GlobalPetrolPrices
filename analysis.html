@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis & Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+    <nav class="navbar">
+        <h2 class="logo-text">Aether<span class="neon-text">Predict</span></h2>
+        <div>
+            <a href="/dashboard.html" class="btn-secondary mr-2">New Prediction</a>
+            <button onclick="logout()" class="btn-secondary">Logout</button>
+        </div>
+    </nav>
+
+    <div class="analysis-container mt-4">
+        <div class="result-header glass-card">
+            <h2>Predicted Petrol Price</h2>
+            <div class="price-display">
+                <span class="currency-symbol">$</span>
+                <span id="predicted-value">--.--</span>
+            </div>
+            <div class="price-display" style="font-size: 2.5rem; margin-top: -1rem; color: var(--text-secondary);">
+                <span class="currency-symbol">₹</span>
+                <span id="predicted-value-inr">--.--</span>
+            </div>
+            <p>Based on the inputs provided, the ML model estimates this global price.</p>
+        </div>
+
+        <div class="charts-grid mt-4">
+            <div class="glass-card chart-container">
+                <h3>Price Evolution Analysis</h3>
+                <canvas id="comparisonChart"></canvas>
+            </div>
+            <div class="glass-card info-card">
+                <h3>AI Insights Summary</h3>
+                <p id="analysis-summary" class="mb-4">Loading insights...</p>
+                <div class="analysis-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Currency</span>
+                        <span class="stat-value" id="stat-currency">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Expected Shift</span>
+                        <span class="stat-value" id="stat-shift">--%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Import Risk</span>
+                        <span class="stat-value" id="stat-risk">--</span>
+                    </div>
+                </div>
+                <div class="insight-pill mt-4">High Precision Model</div>
+                <div class="insight-pill">StandardScaler Active</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script>
+        // Init chart after load
+        document.addEventListener('DOMContentLoaded', initAnalysis);
+    </script>
+</body>
+
+</html>
